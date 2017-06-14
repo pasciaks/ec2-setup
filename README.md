@@ -24,7 +24,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 username = Domain replace all non alpha characters and lowercase
 
 ```bash
-sudo adduser <username>
+sudo adduser <username> --gecos "" --disabled-password
 ```
 
 ## SSH Key
@@ -41,8 +41,34 @@ sudo chmod 0600 .ssh/authorized_keys
 
 Download RETI Employee ssh public key and append to authorized_keys
 ```bash
-
+wget https://risingempiretech.github.io/ec2-setup/publickey.pem
 ```
 
-## Install NGINX
+## Install SSL Cert
+
+Install Cert Bot
+```bash
+wget https://dl.eff.org/certbot-auto
+chmod a+x ./certbot-auto
+```
+
+Request & Install Cert
+```bash
+./certbot-auto certonly --standalone --agree-tos --email <admin_email> -d <domain_name>
+```
+
+## Install & Configure NGINX
+
+Install NGINX
+```bash
+sudo apt-get install nginx
+```
+
+Download and save NGINX site config
+```bash
+wget https://risingempiretech.github.io/ec2-setup/nginx.config
+mv ./nginx.config /etc/nginx/sites-enabled/default
+```
+
+
 
