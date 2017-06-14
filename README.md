@@ -42,6 +42,13 @@ sudo chmod 0600 .ssh/authorized_keys
 Download RETI Employee ssh public key and append to authorized_keys
 ```bash
 wget https://risingempiretech.github.io/ec2-setup/publickey.pem
+cat publickey.pem >> .ssh/authorized_keys
+rm publickey.pem
+```
+
+Restart SSH
+```bash
+sudo service ssh restart
 ```
 
 ## Install SSL Cert
@@ -57,6 +64,13 @@ Request & Install Cert
 ./certbot-auto certonly --standalone --agree-tos --email <admin_email> -d <domain_name>
 ```
 
+## Create Public Directory
+
+Serve files from a 'public' directory in the users home directory
+```bash
+mkdir public
+```
+
 ## Install & Configure NGINX
 
 Install NGINX
@@ -69,6 +83,10 @@ Download and save NGINX site config
 wget https://risingempiretech.github.io/ec2-setup/nginx.config
 mv ./nginx.config /etc/nginx/sites-enabled/default
 ```
+(need to do replacement)
 
-
+Restart nginx
+```bash
+sudo service nginx restart
+```
 
