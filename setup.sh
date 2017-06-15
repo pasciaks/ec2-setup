@@ -20,7 +20,7 @@ if [ -z $DOMAIN ]; then
 fi
 
 # Convert domain name to lowercase
-$DOMAIN="$(echo $DOMAIN | tr '[A-Z]' '[a-z]')"
+DOMAIN="$(echo $DOMAIN | tr '[A-Z]' '[a-z]')"
 
 echo $DOMAIN
 
@@ -36,7 +36,7 @@ echo $DOMAIN
 # ln -s /usr/bin/nodejs /usr/bin/node
 
 # # Remove non-alpha characters
-# $USERNAME=$(echo $DOMAIN | sed 's/[^a-z]//g')
+# USERNAME=$(echo $DOMAIN | sed 's/[^a-z]//g')
 
 # # Add user
 # adduser $USERNAME --gecos "" --disabled-password
