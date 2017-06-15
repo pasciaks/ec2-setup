@@ -65,6 +65,7 @@ apt-get install nginx
 
 wget https://risingempiretech.github.io/ec2-setup/nginx.config
 sed -i "s/DOMAIN/${DOMAIN}/g" nginx.config
+sed -i "s/USERNAME/${USERNAME}/g" nginx.config
 mv ./nginx.config /etc/nginx/sites-enabled/default
 
 service nginx restart
