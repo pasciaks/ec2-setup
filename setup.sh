@@ -67,6 +67,7 @@ chmod a+x ./certbot-auto
 ./certbot-auto certonly --non-interactive --standalone --agree-tos --email blake@risingempire.tech -d $DOMAIN
 
 mkdir public
+chown -R $USERNAME:$USERNAME public
 
 echo "===== Install NGINX ====="
 apt-get -y install nginx
