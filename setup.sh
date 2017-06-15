@@ -83,4 +83,4 @@ echo "===== Switch User ====="
 su $USERNAME
 
 echo "===== Create Cron Job ====="
-(crontab -l 2>/dev/null; echo "24 02 * * * /home/$USERNAME/certbot-auto renew") | crontab -
+(crontab -l 2>/dev/null; echo "24 02 * * * /home/$USERNAME/certbot-auto renew --pre-hook 'service nginx stop' --post-hook 'service nginx start'") | crontab -
