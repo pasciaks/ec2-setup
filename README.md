@@ -1,6 +1,6 @@
  ## Download Setup Script
  ```bash
- wget https://risingempiretech.github.io/ec2-setup/
+ wget https://risingempiretech.github.io/ec2-setup/setup.sh
 ```
 
 ## Run setup script as sudo
